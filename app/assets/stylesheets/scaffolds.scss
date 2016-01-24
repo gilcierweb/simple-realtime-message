@@ -1,0 +1,16 @@
+body { padding-top: 70px; }
+
+#load { height: 100%; width: 100%; }
+#load {
+  position    : fixed;
+  z-index     : 99999; /* or higher if necessary */
+  top         : 0;
+  left        : 0;
+  overflow    : hidden;
+  text-indent : 100%;
+  font-size   : 0;
+  opacity     : 0.6;
+  background  : #E0E0E0  url('') center no-repeat;
+}
+
+.RbtnMargin { margin-left: 5px; }

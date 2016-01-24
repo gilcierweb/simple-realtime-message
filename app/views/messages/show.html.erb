@@ -1,0 +1,27 @@
+<p>
+  <strong><%=t('message.form.name')%>:</strong>
+  <%= @message.name %>
+</p>
+
+<p>
+  <strong><%=t('message.form.email')%>:</strong>
+  <%= @message.email %>
+</p>
+
+<p>
+  <strong><%=t('message.form.subject')%>:</strong>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <strong><%=t('message.form.message')%>:</strong>
+  <%= @message.message %>
+</p>
+
+<p>
+  <strong><%=t('message.form.seen')%>:</strong>
+  <%= @message.seen %>
+</p>
+
+<%= link_to t('action.edit'), edit_message_path(@message), class: 'btn btn-primary' %> |
+<%= link_to t('action.back'), messages_path, class: 'btn btn-default' %>

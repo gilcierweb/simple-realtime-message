@@ -1,0 +1,6 @@
+<h1><%= t('message.edit') %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('action.show'), @message, class: 'btn btn-info' %> |
+<%= link_to t('action.back'), messages_path, class: 'btn btn-default' %>

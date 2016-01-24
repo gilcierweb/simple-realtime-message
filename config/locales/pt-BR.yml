@@ -1,0 +1,24 @@
+pt-BR:
+  action:
+    back: 'Voltar'
+    show: 'Visualizar'
+    new: 'Novo'
+    edit: 'Editar'
+    destroy: 'Excluir'
+    confirm: 'Você tem certeza?'
+  message:
+    index: 'Listando mensagens'
+    new: 'Nova Mensagem'
+    edit: 'Editar Mensagem'
+    detail_message: 'Detalhes da Mensagem'
+    new_message: 'Novas mensagens'
+    create: 'Mensagem foi criada com êxito.'
+    update: 'Mensagem foi atualizada com sucesso.'
+    destroy: 'Mensagem foi destruída com sucesso.'
+    form:
+      name: 'Nome'
+      email: 'E-mail'
+      subject: 'Assunto'
+      message: 'Mensagem'
+      seen: 'Visto'
+      submit: 'Enviar Mensagem'

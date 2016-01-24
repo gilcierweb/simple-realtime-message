@@ -1,0 +1,96 @@
+
+<!--<div id="load">Please wait ...</div>-->
+<div id="loading-spin"></div>
+<%= audio_tag('notify.ogg','notify.mp3','notify.wav',:id => 'notif_audio')  %>
+
+<h1><%=t('message.index')%></h1>
+
+<div id="new-message-notif"></div>
+
+<table class="table table-bordred table-striped">
+  <thead>
+  <tr>
+    <th><%=t('message.form.name')%></th>
+    <th><%=t('message.form.email')%></th>
+    <th><%=t('message.form.subject')%></th>
+    <th><%=t('message.form.message')%></th>
+    <th><%=t('message.form.seen')%></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody id="message-tbody">
+  <% if @messages.size > 0 %>
+
+      <% @messages.each do |message| %>
+          <tr>
+            <td><%= message.name %></td>
+            <td><%= message.email %></td>
+            <td><%= message.subject %></td>
+            <td><%= message.message %></td>
+            <td><%= message.seen %></td>
+            <td>
+              <p>
+              <a style="cursor:pointer" data-toggle="modal" data-target=".bs-example-modal-sm" class="detail-message" id="<%= message.id %>
+            "><span class="glyphicon glyphicon-search"></span></a>
+          </p>
+            <%= link_to t('action.show'), message, class: 'btn btn-info' %></td>
+            <td><%= link_to t('action.edit'), edit_message_path(message), class: 'btn btn-primary' %></td>
+            <td><%= link_to t('action.destroy'), message, method: :delete, data: {confirm: t('action.confirm')}, class: 'btn btn-danger' %></td>
+          </tr>
+      <% end %>
+
+  <% else %>
+
+      <tr id="no-message-notif">
+        <td colspan="5" align="center">
+          <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only"></span> No message
+          </div>
+        </td>
+      </tr>
+
+  <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('message.new'), new_message_path, class: 'btn btn-success' %>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">✕</button>
+        <h4><%=t('message.detail_message')%></h4>
+      </div>
+
+      <div class="modal-body" style="text-align:center;">
+        <div class="row-fluid">
+          <div class="span10 offset1">
+            <div id="modalTab">
+              <div class="tab-content">
+                <div class="tab-pane active" id="about">
+
+                  <div class="text-centered">
+                    <p class="text-left">
+                      <b><%=t('message.form.name')%></b>: <span id="show_name"></span><br/>
+                      <b><%=t('message.form.email')%></b>: <span id="show_email"></span><br/>
+                      <b><%=t('message.form.subject')%></b>: <span id="show_subject"></span><br/>
+                      <b><%=t('message.form.message')%></b>: <span id="show_message"></span><br/>
+                    </p>
+                    <br>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

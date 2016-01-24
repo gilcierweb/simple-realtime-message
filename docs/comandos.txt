@@ -1,0 +1,41 @@
+http://phimtk.com/video/simple-realtime-message-using-socketio-nodejs-and-php-codeigniter-laravel-8efac37f20ae85f711180b.html
+Codeigniter : https://github.com/moemoe89/Simple-realtime-message-SocketIO-NodeJS-CI
+
+Laravel : https://github.com/moemoe89/Simple-realtime-message-SocketIO-NodeJS-Laravel
+
+rails new socketioror -d mysql
+
+gem 'socket.io-rails'
+
+rake db:create:all
+
+rails generate scaffold message name:string email:string subject:string message:text seen:boolean
+
+rake db:migrate
+
+rails generate controller send create
+
+
+Route::post('/','SendController@postCreate');
+Route::get('message','MessageController@index');
+Route::post('message','MessageController@updateSeen');
+
+model
+
+	public function scopeListMessage()
+	{
+		return $this->get();
+	}
+
+	public function scopeCountNewMessage()
+	{
+		return $this->where('seen',0)->get();
+	}
+	public function scopeUpdateSeen($query,$id)
+	{
+		return $query->where('id',$id)->update(['seen'=>1]);
+	}
+	public function scopeDetailMessage($query,$id)
+	{
+		return $query->find($id)->toArray();
+	}
