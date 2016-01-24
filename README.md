@@ -8,9 +8,8 @@ Website: http://gilcierweb.com.br.
 
 Licença: http://www.opensource.org/licenses/mit-license.php The MIT License.
 
-Demo: [Realtime Socket.io, NodeJs e Ruby On Rails](https://youtu.be/Dn5bIOnEpAY "Realtime Socket.io, NodeJs e Ruby On Rails")
+Demo: [![Realtime Socket.io, NodeJs e Ruby On Rails](http://img.youtube.com/vi/Dn5bIOnEpAY/0.jpg)](https://youtu.be/Dn5bIOnEpAY "Realtime Socket.io, NodeJs e Ruby On Rails")
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Dn5bIOnEpAY" frameborder="0" allowfullscreen></iframe>
 
 1. Entre na pasta do projeto pelo terminal
 ```shell
