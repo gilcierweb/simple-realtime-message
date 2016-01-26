@@ -30,6 +30,7 @@ io.on('connection', function (socket) {
     	name: data.name,
     	email: data.email,
     	subject: data.subject,
+        message: data.message,
     	created_at: data.created_at,
     	id: data.id
     });
