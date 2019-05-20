@@ -21,6 +21,7 @@ cd simple-realtime-message/
 2. Terminal baixe as dependencias do nodejs vai rodar na porta 3002 para nao dar conflito com a porta onde roda rails 3000
 
 ```shell
+cd simple-realtime-message/public
 npm install
 ```
 
